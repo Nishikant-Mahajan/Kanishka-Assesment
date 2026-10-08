@@ -121,8 +121,7 @@ src/
 
 ```bash
 # Clone the repo
-git clone <your-repo-url>
-cd shop-app
+git clone [<your-repo-url>](https://github.com/Nishikant-Mahajan/Kanishka-Assesment)
 
 # Install dependencies
 npm install
