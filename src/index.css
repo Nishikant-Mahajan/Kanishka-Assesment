@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg-primary text-text-primary font-sans antialiased;
+    min-height: 100dvh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-bg-secondary;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border-light rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-text-muted;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand text-white font-semibold text-sm
+           hover:bg-brand-light active:bg-brand-dark transition-all duration-200
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl text-text-secondary font-medium text-sm
+           hover:text-text-primary hover:bg-bg-elevated transition-all duration-200
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary;
+  }
+
+  .btn-danger {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-accent-rose/10 text-accent-rose font-medium text-sm
+           hover:bg-accent-rose/20 transition-all duration-200
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-rose focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary;
+  }
+
+  .card {
+    @apply bg-bg-card rounded-xl3 border border-border shadow-card;
+  }
+
+  .input {
+    @apply w-full bg-bg-elevated border border-border text-text-primary placeholder:text-text-muted
+           rounded-xl px-4 py-2.5 text-sm outline-none
+           focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all duration-200;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+
+  .shimmer-line {
+    @apply bg-gradient-to-r from-bg-elevated via-bg-card to-bg-elevated bg-[length:400px_100%] animate-shimmer rounded;
+  }
+}
