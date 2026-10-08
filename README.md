@@ -151,28 +151,9 @@ npx tsc --noEmit
 
 ---
 
-## Design Decisions
-
-**Why Zustand over Context/Redux?**
-Zustand is minimal, has built-in persistence middleware, and avoids boilerplate. For a cart store with 5 actions it's the right tool — no providers needed.
-
-**Why no light mode?**
-The brief explicitly said not to make the site in light theme. The dark palette (`#0f1117` background, `#6c63ff` brand accent) is the only supported mode.
-
-**Why Phosphor Icons?**
-The brief asked for icons that look like a human thought about design. Phosphor Icons has a hand-crafted aesthetic with multiple weights (duotone, bold, fill) that give visual hierarchy without feeling generic.
-
-**Why simulate a loading delay?**
-Real apps fetch from APIs. The 800ms simulated delay in `useProducts.ts` demonstrates proper loading state handling (shimmer skeletons) that would work identically with a real API call — swap `setTimeout` for a `fetch`.
-
-**Component reusability**
-`EmptyState`, `Badge`, `StarRating`, `Skeleton`, `Toast` are all fully generic and reused across multiple pages/contexts without modification.
-
----
-
 ## Assessment Checklist
 
-- [x] Local product JSON data (25 products, 7 categories)
+- [x] Local product JSON data
 - [x] Responsive product grid
 - [x] Product search
 - [x] Category filtering
